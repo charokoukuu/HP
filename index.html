@@ -3,6 +3,9 @@
 <head>
 <title>CHARO</title>
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
+<div id="back-to-top" style="position:fixed;right:15px;bottom:25px;z-index: 2;size: 50px;box-shadow:none"><a href="#"><img src="./images/top.png" width="60px"></a></div>
+<div id="pos" style="position:fixed;left:5px;bottom:5px;z-index: 2;"></div>
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,6 +15,11 @@
 <script>
 
 $(function() {
+	$("#ziko").hide();
+	$("#google_home").hide();
+	$("#iotneko").hide();
+	$("#ziko").fadeIn(1500);
+
 	var txt = "C H A R O";
 		var txtArr = txt.split("");
 		var count = 0;
@@ -32,11 +40,22 @@ txtCount();
         
         // スクロールが十分されたら#back-to-topを表示、スクロールが戻ったら非表示
         $(window).scroll(function() {
-            $('#pos').text($(this).scrollTop());
+			
+           // $('#pos').text($(this).scrollTop());
             if ($(this).scrollTop() > 230) {
                 $('#back-to-top').fadeIn();
             } else {
                 $('#back-to-top').fadeOut();
+            }
+			if ($(this).scrollTop() > 267) {
+                $('#google_home').fadeIn(1500);
+            } else {
+               
+            }
+			if ($(this).scrollTop() > 792) {
+                $('#iotneko').fadeIn(1500);
+            } else {
+               
             }
         });
         
@@ -138,7 +157,7 @@ color: #fff;
 <li class="nav-item card bg-info w-25 text-center ml-2"><a href="https://www.facebook.com/charokoukuu.xyz" class="nav-link font-weight-bold text-light">Facebook</a></li>
 <li class="nav-item card bg-danger w-25 text-center ml-2"><a href="https://www.youtube.com/channel/UCK_W4W4J-k4sULxNKCUKg_Q" class="nav-link font-weight-bold text-light">YouTube</a></li>
 
-<li class="nav-item card bg-warning w-25 text-center ml-2"><a href="https://github.com/charokoukuu/HP" class="nav-link font-weight-bold text-light">GitHub</a></li>
+<li class="nav-item card bg-warning w-25 text-center ml-2"><a href="https://github.com" class="nav-link font-weight-bold text-light">GitHub</a></li>
 
 
 
@@ -237,6 +256,7 @@ color: #fff;
 </section>
 
 <section class="pt-3">
+	<div id="google_home">
 <div class="container card bg-light">
 <h2 class="text-center text-dark card-header ">Google Home<br>壁掛けマウント</h2>
 <div class="tab-content">
@@ -271,9 +291,9 @@ color: #fff;
 <p class="card-footer text-center text-muted" >製作時間：４時間</p>
 </div>
 
-
+</div>
 </section>
-
+<div id="iotneko">
 <section class="pt-3">
 	<div class="container card bg-light">
 	<h2 class="text-center text-dark card-header ">猫Iotカメラ<br>監視システム</h2>
@@ -295,7 +315,7 @@ color: #fff;
 	
 	</div>
 	<div id="keii2" class="tab-pane">
-	<p id="#fade" class="text-muted py-3 fade show">飼猫が何回餌を食べに来ているのかを可視化し、<br>適切な食生活を取りやすくする為に製作した。</p>
+	<p id="#fade" class="text-muted py-3 fade show">飼猫が何回餌を食べに来ているのかを可視化し、適切な食生活を取りやすくする為に製作した。</p>
 	</div>
 	<div id="gizyutu2" class="tab-pane text-muted">
 	<h3 id="#fade " class="font-weight-bold py-1">・材料</h3>
@@ -311,14 +331,14 @@ color: #fff;
 	
 	<p class="card-footer text-center text-muted" >製作時間：2時間</p>
 	</div>
-	
+</div>
 	
 	</section>
 
 </main>
 
 <footer class="text-center text-muted py-4 mb-0 card-footer bg-muted">
-<p id="back-to-top" class="bg-dark px-3 py-2 "><a href="#" class="font-weight-bold text-light">↑</a></p>
+
 
 <p>
 <u><a href="test/mailform.html">コメントを残す</a></u>
