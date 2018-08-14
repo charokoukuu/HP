@@ -2,14 +2,56 @@
 <html lang="ja">
 <head>
 <title>CHARO</title>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="theme-color" content="#3b5998">
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
+<script>
 
+$(function() {
+	var txt = "C H A R O";
+		var txtArr = txt.split("");
+		var count = 0;
+
+		var txtCount = function() {
+
+var timer = setTimeout(txtCount, 250);
+
+$('#daimei').append(txtArr[count]);
+count++;
+if (count == txtArr.length) {
+	clearTimeout(timer);
+}
+}
+
+txtCount();
+	$('#back-to-top').hide();
+        
+        // スクロールが十分されたら#back-to-topを表示、スクロールが戻ったら非表示
+        $(window).scroll(function() {
+            $('#pos').text($(this).scrollTop());
+            if ($(this).scrollTop() > 230) {
+                $('#back-to-top').fadeIn();
+            } else {
+                $('#back-to-top').fadeOut();
+            }
+        });
+        
+		$('#back-to-top a').click(function() {
+    $('html, body').animate({
+        scrollTop:0
+    }, 500);
+    return false;
+});
+$('#title').on('click',function(){
+alert("こちらのページでは製作したもの（Soft,Hard）を不定期に更新していく予定です。");
+
+});
+
+});
 
 
 
@@ -45,7 +87,7 @@ float: right;
 	box-shadow: 10px 10px 10px rgba(0, 0, 0, 1);
 
 }
-#page-top {
+#back-to-top {
 position: fixed;
 bottom: 20px;
 right: 10px;
@@ -55,7 +97,7 @@ opacity: 0.6;
 	 border-radius: 5px;
 }
 
-#page-top a {
+#back-to-top a {
 
 
 color: #fff;
@@ -84,7 +126,8 @@ color: #fff;
 <div class="container bg-dark " id="navi">
 
 <nav class="navbar navbar-expand-sm navbar-dark ">
-<a href="" class="navbar-brand text-info font-weight-bold " id="title">Charokoukuu.site</a>
+	
+<a class="navbar-brand text-info font-weight-bold " id="title">Charokoukuu.site</a>
 <button class="navbar-toggler " data-toggle="collapse" data-target="#menu">
 <span class="navbar-toggler-icon  pull-light"></span>
 </button> 
@@ -275,7 +318,7 @@ color: #fff;
 </main>
 
 <footer class="text-center text-muted py-4 mb-0 card-footer bg-muted">
-<p id="page-top" class="bg-dark px-3 py-2 "><a href="#" class="font-weight-bold text-light">↑</a></p>
+<p id="back-to-top" class="bg-dark px-3 py-2 "><a href="#" class="font-weight-bold text-light">↑</a></p>
 
 <p>
 <u><a href="test/mailform.html">コメントを残す</a></u>
@@ -286,48 +329,8 @@ color: #fff;
 </footer>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-<script>
 
 
-$(function() {
-		var topBtn = $('#page-top');  
-		var txt = "C H A R O";
-		var txtArr = txt.split("");
-		var count = 0;
-
-		var txtCount = function() {
-		var topBtn = $('#page-top');
-$("#page-top").hide();
-		//スクロールが500に達したらボタン表示
-		$(window).scroll(function () {
-				if ($(this).scrollTop() > 200) {
-				topBtn.fadeIn();
-				} else {
-				topBtn.fadeOut();
-				}
-				});
-		//スルスルっとスクロールでトップへもどる
-		topBtn.click(function () {
-				$('body,html').animate({
-scrollTop: 0
-}, 500);
-				return false;
-				});
-var timer = setTimeout(txtCount, 250);
-$('#daimei').append(txtArr[count]);
-count++;
-if (count == txtArr.length) {
-	clearTimeout(timer);
-}
-}
-
-txtCount();
-
-});
-
-
-</script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
