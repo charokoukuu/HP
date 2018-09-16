@@ -9,17 +9,20 @@
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="theme-color" content="#3b5998">
+<meta name="theme-color" content="#24292e">
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script>
 
 $(function() {
-	$("#ziko").hide();
+
+$("#size").hide();
+$("#ziko").hide();
 	$("#google_home").hide();
 	$("#iotneko").hide();
 	$("#ziko").fadeIn(1500);
 
+$("#size").fadeIn(1500);
 	var txt = "C H A R O";
 		var txtArr = txt.split("");
 		var count = 0;
@@ -44,6 +47,7 @@ txtCount();
            // $('#pos').text($(this).scrollTop());
             if ($(this).scrollTop() > 230) {
                 $('#back-to-top').fadeIn();
+                $("#size").hide();
             } else {
                 $('#back-to-top').fadeOut();
             }
@@ -80,6 +84,9 @@ alert("こちらのページでは製作したもの（Soft,Hard）を不定期�
 </head>
 
 <style>
+#title{
+font-family:'fantasy';
+}
 #haba{
 padding-right:30px;
 }
@@ -104,7 +111,10 @@ float: right;
 	
 	z-index: 2;
 	box-shadow: 10px 10px 10px rgba(0, 0, 0, 1);
-
+background-color:#3b5998;
+border-radius:10px;
+border-style:ridge;
+border-color:white;
 }
 #back-to-top {
 position: fixed;
@@ -137,16 +147,16 @@ color: #fff;
 <body>
 <header>
 <div class="alert alert-warning text-center mb-0 alert-dismissible fade show " id="size">
-⚠️   現在コメント機能は工事中です
+最終更新：2018年 09月16日
 <button class="close" data-dismiss="alert" > 
 &times;
 </button>
 </div>
-<div class="container bg-dark " id="navi">
+<div class="container  " id="navi">
 
 <nav class="navbar navbar-expand-sm navbar-dark ">
 	
-<a class="navbar-brand text-info font-weight-bold " id="title">Charokoukuu.site</a>
+<a class="navbar-brand text-light font-weight-bold " id="title">Charokoukuu.site</a>
 <button class="navbar-toggler " data-toggle="collapse" data-target="#menu">
 <span class="navbar-toggler-icon  pull-light"></span>
 </button> 
@@ -288,7 +298,7 @@ color: #fff;
 </div>
 </div>
 
-<p class="card-footer text-center text-muted" >製作時間：４時間</p>
+<p class="card-footer text-center text-muted" >2018年 03月16日</p>
 </div>
 
 </div>
@@ -329,7 +339,7 @@ color: #fff;
 	</div>
 	</div>
 	
-	<p class="card-footer text-center text-muted" >製作時間：2時間</p>
+	<p class="card-footer text-center text-muted" >2018年 04月14日</p>
 	</div>
 </div>
 	
